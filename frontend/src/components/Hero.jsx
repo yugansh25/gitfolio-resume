@@ -7,7 +7,7 @@ const Hero = () => {
   const { profile } = portfolioData;
 
   return (
-    <section className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6">
+    <section id="about" className="min-h-screen flex items-center justify-center pt-20 pb-12 px-6">
       <div className="container mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
