@@ -172,11 +172,7 @@ Your portfolio includes:
 
 Location: `/app/frontend/.env`
 
-```env
-REACT_APP_BACKEND_URL=http://localhost:8001
-```
 
-Change this if you want to connect to a backend API.
 
 ### Add New Components
 

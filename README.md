@@ -1,6 +1,6 @@
 # Yugansh's Developer Portfolio 🚀
 
-A modern, responsive personal portfolio website showcasing my software development journey, technical skills, and projects. Built with React, FastAPI, and MongoDB.
+A modern, responsive personal portfolio website showcasing my software development journey, technical skills, and projects. Built with React and Tailwind CSS.
 
 ## 👨‍💻 About Me
 
@@ -8,11 +8,9 @@ I'm **Yugansh** (LemonQuote#73), a passionate **Software Developer** and **Data 
 
 ### My Expertise
 - **Languages:** JavaScript, Python, Shell scripting
-- **Frontend:** React, Modern UI/UX design
-- **Backend:** Node.js, FastAPI, REST APIs
+- **Frontend:** React, Modern UI/UX design, Tailwind CSS
 - **Data Science:** Machine Learning, Natural Language Processing, Statistical Analysis
 - **DevOps:** Docker, Linux system configuration, Automation tools
-- **Databases:** MongoDB, Data modeling
 
 ### Featured Projects
 1. **Triage Enrichment System** - Automated support ticket classification system using AI/ML
@@ -29,8 +27,6 @@ I'm currently seeking opportunities in **software development** and **data scien
 ### Prerequisites
 - **Node.js** (v16 or higher) - [Download here](https://nodejs.org/)
 - **Yarn** package manager - Install with `npm install -g yarn`
-- **Python** (v3.8 or higher) - [Download here](https://www.python.org/)
-- **MongoDB** (optional for full-stack functionality) - [Download here](https://www.mongodb.com/try/download/community)
 
 ### Frontend Setup
 
@@ -44,9 +40,7 @@ I'm currently seeking opportunities in **software development** and **data scien
    yarn install
    ```
 
-3. **Configure environment variables:**
-   - The `.env` file should already exist with `REACT_APP_BACKEND_URL`
-   - Update it if you need to change the backend URL
+
 
 4. **Start the development server:**
    ```bash
@@ -57,38 +51,7 @@ I'm currently seeking opportunities in **software development** and **data scien
    - Open your browser and go to: `http://localhost:3000`
    - The app will automatically reload when you make changes
 
-### Backend Setup (Optional - for full-stack functionality)
 
-1. **Navigate to backend directory:**
-   ```bash
-   cd /app/backend
-   ```
-
-2. **Create a virtual environment (recommended):**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
-
-3. **Install Python dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure environment variables:**
-   - Create/update `.env` file in `/app/backend/`
-   - Add your MongoDB connection string:
-     ```
-     MONGO_URL=mongodb://localhost:27017/
-     DB_NAME=portfolio_db
-     ```
-
-5. **Start the backend server:**
-   ```bash
-   uvicorn server:app --host 0.0.0.0 --port 8001 --reload
-   ```
-
-6. **Backend API will be available at:** `http://localhost:8001`
 
 ### Production Build
 
@@ -129,10 +92,7 @@ The build folder will contain optimized static files ready for deployment to any
 │   ├── package.json         # Frontend dependencies
 │   └── .env                 # Frontend environment variables
 │
-└── backend/                 # FastAPI backend (optional)
-    ├── server.py            # Main API server
-    ├── requirements.txt     # Python dependencies
-    └── .env                 # Backend environment variables
+
 ```
 
 ---
@@ -174,11 +134,7 @@ The build folder will contain optimized static files ready for deployment to any
 - **Lucide React** - Beautiful icon library
 - **Axios** - HTTP client for API calls
 
-### Backend (Optional)
-- **FastAPI** - Modern Python web framework
-- **MongoDB** - NoSQL database
-- **Motor** - Async MongoDB driver
-- **Pydantic** - Data validation
+
 
 ### Development Tools
 - **Yarn** - Package manager
@@ -241,8 +197,7 @@ REACT_APP_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
 # Web3Forms Configuration (https://web3forms.com/)
 REACT_APP_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
 
-# Backend URL (for future use)
-REACT_APP_BACKEND_URL=http://localhost:8001
+
 ```
 
 #### Setting Up EmailJS (Recommended)
