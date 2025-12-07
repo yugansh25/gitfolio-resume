@@ -8,9 +8,9 @@ export const portfolioData = {
     location: "Hyderabad, India",
     avatar: "https://avatars.githubusercontent.com/u/65813503?v=4",
     githubUrl: "https://github.com/yugansh25",
-    email: "Hello@yugansh.com",
+    email: "hello@yugansh.dev",
     linkedin: "https://www.linkedin.com/in/yugansh-chawda",
-    website: "https://yourwebsite.com"
+    website: "https://yugansh.dev"
   },
 
   skills: [
@@ -95,7 +95,7 @@ export const portfolioData = {
   },
 
   contact: {
-    email: "Hello@yugansh.com",
+    email: "hello@yugansh.dev",
     linkedin: "https://www.linkedin.com/in/yugansh-chawda",
     github: "https://github.com/yugansh25",
     twitter: "https://x.com/YuganshChawda"
