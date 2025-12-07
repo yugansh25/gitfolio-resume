@@ -1,5 +1,5 @@
-import React from 'react';
-import { Github, Mail, Linkedin, Twitter, Send } from 'lucide-react';
+import React, { useState } from 'react';
+import { Github, Mail, Linkedin, Twitter, Send, Loader2 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -7,17 +7,52 @@ import { Textarea } from './ui/textarea';
 import { Label } from './ui/label';
 import { portfolioData } from '../data/portfolio-data';
 import { toast } from '../hooks/use-toast';
+import { sendEmail } from '../services/emailService';
 
 const Contact = () => {
   const { contact } = portfolioData;
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // This is a placeholder - will be connected to backend later
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
+    setIsLoading(true);
+
+    try {
+      const result = await sendEmail(formData);
+
+      toast({
+        title: "Message Sent! ✉️",
+        description: result.message || "Thank you for reaching out. I'll get back to you soon!",
+      });
+
+      // Reset form on success
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Failed to send message ❌",
+        description: error.message || "Something went wrong. Please try again or contact me directly via email.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const socialLinks = [
@@ -78,6 +113,9 @@ const Contact = () => {
                   <Input
                     id="name"
                     placeholder="Your Name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    disabled={isLoading}
                     required
                   />
                 </div>
@@ -87,6 +125,9 @@ const Contact = () => {
                     id="email"
                     type="email"
                     placeholder="your.email@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={isLoading}
                     required
                   />
                 </div>
@@ -96,15 +137,28 @@ const Contact = () => {
                     id="message"
                     placeholder="Your message..."
                     rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={isLoading}
                     required
                   />
                 </div>
                 <Button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600"
                 >
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-4 w-4" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>

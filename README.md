@@ -224,9 +224,49 @@ The build folder will contain optimized static files ready for deployment to any
 ## 📝 Environment Variables
 
 ### Frontend (`.env` in `/app/frontend/`)
+
+#### Email Service Configuration
+
+The contact form supports two email service providers: **EmailJS** and **Web3Forms**. You can easily switch between them using environment variables.
+
 ```env
+# Choose your email service: EMAILJS or WEB3FORMS
+REACT_APP_EMAIL_SERVICE=EMAILJS
+
+# EmailJS Configuration (https://www.emailjs.com/)
+REACT_APP_EMAILJS_SERVICE_ID=your_emailjs_service_id
+REACT_APP_EMAILJS_TEMPLATE_ID=your_emailjs_template_id
+REACT_APP_EMAILJS_PUBLIC_KEY=your_emailjs_public_key
+
+# Web3Forms Configuration (https://web3forms.com/)
+REACT_APP_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
+
+# Backend URL (for future use)
 REACT_APP_BACKEND_URL=http://localhost:8001
 ```
+
+#### Setting Up EmailJS (Recommended)
+1. Sign up at [EmailJS](https://www.emailjs.com/) (Free: 200 emails/month)
+2. Create a new email service (Gmail, Outlook, etc.)
+3. Create an email template with these template parameters:
+   - `{{from_name}}` - Sender's name
+   - `{{from_email}}` - Sender's email
+   - `{{message}}` - Message content
+   - `{{reply_to}}` - Reply-to email
+4. Get your Service ID, Template ID, and Public Key from dashboard
+5. Update `.env` file with your credentials
+
+#### Setting Up Web3Forms (Alternative)
+1. Visit [Web3Forms](https://web3forms.com/)
+2. Enter your email to get a free access key (No signup required!)
+3. Update `.env` file with `REACT_APP_WEB3FORMS_ACCESS_KEY`
+4. Messages will be sent directly to your email
+
+#### Switching Between Services
+Simply change `REACT_APP_EMAIL_SERVICE` in your `.env` file:
+- `EMAILJS` - Uses EmailJS (more features, custom templates)
+- `WEB3FORMS` - Uses Web3Forms (simpler, no signup needed)
+
 
 ### Backend (`.env` in `/app/backend/`)
 ```env
@@ -251,6 +291,24 @@ DB_NAME=portfolio_db
 - Ensure Tailwind CSS is properly configured
 - Check that `postcss` and `autoprefixer` are installed
 - Restart the development server
+
+### Contact form not sending emails
+- **EmailJS Issues:**
+  - Verify Service ID, Template ID, and Public Key in `.env`
+  - Check template parameters match: `{{from_name}}`, `{{from_email}}`, `{{message}}`, `{{reply_to}}`
+  - Ensure EmailJS service is connected to your email provider
+  - Check browser console for error messages
+  
+- **Web3Forms Issues:**
+  - Verify access key is correct in `.env`
+  - Check spam folder for test emails
+  - Ensure you're using the correct email address
+  
+- **General:**
+  - Restart dev server after changing `.env` variables
+  - Check browser console for detailed error messages
+  - Try switching to the alternative email provider
+
 
 ---
 
