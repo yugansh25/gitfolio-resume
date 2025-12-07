@@ -1,7 +1,7 @@
 import React from 'react';
 import { GitBranch, Star, Users, Activity } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { portfolioData } from '../data/mock';
+import { portfolioData } from '../data/portfolio-data';
 
 const Stats = () => {
   const { stats } = portfolioData;

@@ -4,14 +4,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
-import { portfolioData } from '../data/mock';
+import { portfolioData } from '../data/portfolio-data';
 
 const Projects = () => {
   const { projects } = portfolioData;
   const [filter, setFilter] = useState('all');
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(p => p.featured);
 
   return (

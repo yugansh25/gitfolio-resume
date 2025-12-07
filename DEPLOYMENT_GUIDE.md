@@ -51,7 +51,7 @@ http://localhost:3000
 
 ### Update Your Personal Information
 
-1. Open the file: `/app/frontend/src/data/mock.js`
+1. Open the file: `/app/frontend/src/data/portfolio-data.js`
 
 2. Update the following sections:
 
@@ -201,7 +201,7 @@ If you encounter any issues:
 
 After running locally:
 
-1. ✅ Customize your information in `mock.js`
+1. ✅ Customize your information in `portfolio-data.js`
 2. ✅ Update your profile picture URL
 3. ✅ Add your real projects and descriptions
 4. ✅ Update contact information

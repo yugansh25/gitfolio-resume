@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, MapPin, ExternalLink } from 'lucide-react';
 import { Button } from './ui/button';
-import { portfolioData } from '../data/mock';
+import { portfolioData } from '../data/portfolio-data';
 
 const Hero = () => {
   const { profile } = portfolioData;

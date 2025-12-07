@@ -121,7 +121,7 @@ The build folder will contain optimized static files ready for deployment to any
 │   │   ├── context/         # React context providers
 │   │   │   └── ThemeContext.js  # Dark/Light theme management
 │   │   ├── data/
-│   │   │   └── mock.js      # Mock data for development
+│   │   │   └── portfolio-data.js      # Portfolio data
 │   │   ├── App.js           # Main app component
 │   │   ├── index.css        # Global styles & Tailwind
 │   │   └── App.css          # App-specific styles
@@ -192,17 +192,17 @@ The build folder will contain optimized static files ready for deployment to any
 
 ### Update Your Information
 
-1. **Profile Data** - Edit `/app/frontend/src/data/mock.js`:
+1. **Profile Data** - Edit `/app/frontend/src/data/portfolio-data.js`:
    - Update your name, bio, location
    - Add your GitHub, LinkedIn, email, website URLs
    - Customize skills and tech stack
 
-2. **Projects** - In `mock.js`:
+2. **Projects** - In `portfolio-data.js`:
    - Add/remove projects
    - Update descriptions and tech stacks
    - Add demo links and GitHub repos
 
-3. **Contact Information** - In `mock.js`:
+3. **Contact Information** - In `portfolio-data.js`:
    - Update email address
    - Add your LinkedIn profile URL
    - Update Twitter/X handle
@@ -263,8 +263,8 @@ This project is open source and available for personal use. Feel free to fork an
 ## 🤝 Connect With Me
 
 - **GitHub:** [@yugansh25](https://github.com/yugansh25)
-- **Email:** your.email@example.com *(update in mock.js)*
-- **LinkedIn:** Update in mock.js
+- **Email:** your.email@example.com *(update in portfolio-data.js)*
+- **LinkedIn:** Update in portfolio-data.js
 - **Location:** Hyderabad, India
 
 ---

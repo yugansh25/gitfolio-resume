@@ -2,7 +2,7 @@ import React from 'react';
 import { Code2, Terminal, Atom, Server, Zap, Database, BarChart3, Brain, GitBranch, Container, Monitor } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
-import { portfolioData } from '../data/mock';
+import { portfolioData } from '../data/portfolio-data';
 
 const iconMap = {
   Code2,
