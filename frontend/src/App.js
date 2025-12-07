@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { Toaster } from './components/ui/toaster';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Stats from './components/Stats';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { Loader2 } from 'lucide-react';
 import './App.css';
+
+// Lazy load non-critical components
+const Skills = lazy(() => import('./components/Skills'));
+const Projects = lazy(() => import('./components/Projects'));
+const Stats = lazy(() => import('./components/Stats'));
+const Contact = lazy(() => import('./components/Contact'));
+const Footer = lazy(() => import('./components/Footer'));
+
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <Loader2 className="h-8 w-8 animate-spin text-cyan-500" />
+  </div>
+);
 
 function App() {
   return (
@@ -19,12 +28,16 @@ function App() {
           <Header />
           <main>
             <Hero />
-            <Skills />
-            <Projects />
-            <Stats />
-            <Contact />
+            <Suspense fallback={<LoadingFallback />}>
+              <Skills />
+              <Projects />
+              <Stats />
+              <Contact />
+            </Suspense>
           </main>
-          <Footer />
+          <Suspense fallback={<LoadingFallback />}>
+            <Footer />
+          </Suspense>
           <Toaster />
         </div>
       </BrowserRouter>

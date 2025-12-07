@@ -12,11 +12,11 @@ const Footer = () => {
             <Code2 className="h-4 w-4" />
             <span>Built with</span>
             <Heart className="h-4 w-4 text-red-500 fill-current" />
-            <span>using React & FastAPI</span>
+            <span>using React & Tailwind</span>
           </div>
-          
+
           <div className="text-sm text-foreground/60">
-            © {currentYear} yugansh25. All rights reserved.
+            © {currentYear} yugansh.dev. All rights reserved.
           </div>
 
           <div className="flex items-center gap-2">

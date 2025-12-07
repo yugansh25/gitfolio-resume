@@ -9,7 +9,7 @@ export const portfolioData = {
     avatar: "https://avatars.githubusercontent.com/u/65813503?v=4",
     githubUrl: "https://github.com/yugansh25",
     email: "Hello@yugansh.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
+    linkedin: "https://www.linkedin.com/in/yugansh-chawda",
     website: "https://yourwebsite.com"
   },
 
@@ -20,7 +20,7 @@ export const portfolioData = {
     { name: "React", category: "framework", icon: "Atom" },
     { name: "Node.js", category: "framework", icon: "Server" },
     { name: "FastAPI", category: "framework", icon: "Zap" },
-    { name: "MongoDB", category: "database", icon: "Database" },
+
     { name: "Data Science", category: "domain", icon: "BarChart3" },
     { name: "Machine Learning", category: "domain", icon: "Brain" },
     { name: "Git", category: "tool", icon: "GitBranch" },
@@ -96,8 +96,8 @@ export const portfolioData = {
 
   contact: {
     email: "Hello@yugansh.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
+    linkedin: "https://www.linkedin.com/in/yugansh-chawda",
     github: "https://github.com/yugansh25",
-    twitter: "@yourusername"
+    twitter: "https://x.com/YuganshChawda"
   }
 };

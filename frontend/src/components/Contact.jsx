@@ -76,8 +76,8 @@ const Contact = () => {
     },
     {
       icon: Twitter,
-      label: 'Twitter',
-      url: `https://twitter.com/${contact.twitter}`,
+      label: 'X / Twitter',
+      url: contact.twitter,
       color: 'hover:text-cyan-400'
     }
   ];
@@ -190,7 +190,9 @@ const Contact = () => {
                       <div>
                         <div className="font-semibold">{social.label}</div>
                         <div className="text-sm text-foreground/60">
-                          {social.label === 'Email' ? contact.email : `@${social.label.toLowerCase()}`}
+                          {social.label === 'Email' ? contact.email :
+                            social.label === 'X / Twitter' ? 'Follow on X' :
+                              social.label === 'GitHub' ? 'View Repos' : 'Connect'}
                         </div>
                       </div>
                     </a>
